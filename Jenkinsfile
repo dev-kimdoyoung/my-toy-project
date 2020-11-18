@@ -54,6 +54,7 @@ pipeline {
             dir ('./website'){
                 sh '''
                 aws s3 sync ./ s3://kimdoyoung-jenkins-test
+                sudo usermod -aG docker jenkins
                 '''
             }
           }
