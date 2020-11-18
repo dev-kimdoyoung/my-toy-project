@@ -54,7 +54,6 @@ pipeline {
             dir ('./website'){
                 sh '''
                 aws s3 sync ./ s3://kimdoyoung-jenkins-test
-                sudo usermod -aG docker jenkins
                 '''
             }
           }
@@ -90,6 +89,7 @@ pipeline {
               // node.js 공식 이미지로 도커 컨테이너 생성
               docker {
                 image 'node:latest'
+                args '-u root:root'
               }
             }
             
