@@ -130,7 +130,7 @@ pipeline {
             // 서버 코드를 도커로 빌드
             dir ('./server'){
                 sh """
-                docker build . -t server --build-arg env=${PROD}
+                sudo docker build . -t server --build-arg env=${PROD}
                 """
             }
           }
@@ -154,8 +154,8 @@ pipeline {
             // 실행 중인 컨테이너 종료 후 새로 배포된 코드로 컨테이너 재실행
             dir ('./server'){
                 sh '''
-                docker rm -f $(docker ps -aq)
-                docker run -p 80:80 -d server
+                sudo docker rm -f $(docker ps -aq)
+                sudo docker run -p 80:80 -d server
                 '''
             }
           }
