@@ -55,6 +55,7 @@ pipeline {
                 sh '''
                 aws s3 sync ./ s3://kimdoyoung-jenkins-test
                 '''
+            }
           }
 
           post {
