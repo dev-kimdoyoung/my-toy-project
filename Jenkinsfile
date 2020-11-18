@@ -66,9 +66,9 @@ pipeline {
 
                   // stage 성공 시 사후 작업 (아래 메일 주소로 메일 전송)
                   // 메일 발송을 위해 Jenkins 서버에서 SMTP 서버 정보를 등록해야 함
-                  mail  to: 'octl4573@gmail.com',
-                        subject: "Deploy Frontend Success",
-                        body: "Successfully deployed frontend!"
+                  // mail  to: 'octl4573@gmail.com',
+                  //       subject: "Deploy Frontend Success",
+                  //       body: "Successfully deployed frontend!"
 
               }
 
@@ -76,9 +76,9 @@ pipeline {
                   echo 'I failed :('
 
                   // stage 실패 시 사후 작업
-                  mail  to: 'octl4573@gmail.com',
-                        subject: "Failed Pipelinee",
-                        body: "Something is wrong with deploy frontend"
+                  // mail  to: 'octl4573@gmail.com',
+                  //       subject: "Failed Pipelinee",
+                  //       body: "Something is wrong with deploy frontend"
               }
           }
         }
@@ -160,14 +160,14 @@ pipeline {
             }
           }
 
-          post {
-            success {
-              mail  to: 'octl4573@gmail.com',
-                    subject: "Deploy Success",
-                    body: "Successfully deployed!"
+          // post {
+          //   success {
+          //     mail  to: 'octl4573@gmail.com',
+          //           subject: "Deploy Success",
+          //           body: "Successfully deployed!"
                   
-            }
-          }
+          //   }
+          // }
         }
     }
 }
